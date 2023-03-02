@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-home',
   standalone: true,
   imports: [],
-  template: `<p>Welcome home! my tes   t</p>`,
+  template: `<p>Welcome home! my test hello</p>`,
 })
 export class HomeComponent implements OnInit {
   constructor() {}

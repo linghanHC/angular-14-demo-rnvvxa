@@ -19,5 +19,29 @@
       ></app-required-select>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+  <div class="row">
+    <div class="col">
+      <select
+        class="custom-select mb-3"
+        (change)="changeLanguage($event)"
+        formControlName="language"
+      >
+        <option value="">Choose Language</option>
+        <option *ngFor="let myLang of languageOptions" [ngValue]="myLang">
+          {{ myLang }}
+        </option>
+      </select>
+      <!-- error block --> 
+      <div  *ngIf="isSubmitted && cityName?.invalid">
+        <sup>*</sup>Please select a language
+      </div>
+    </div>
+  </div>
+
+  <!-- <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+    Submit
+  </button> -->
+  <button type="submit" class="btn btn-primary" >
+    Submit
+  </button>
 </form>
